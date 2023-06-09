@@ -67,3 +67,44 @@ state_county_zipped == state_county_tuples
 
 state_county_lists = [list(i) for i in state_county_tuples]
 print(state_county_lists)
+
+# Task 3: Unpacking an iterable
+# Data professionals often use the technique of unpacking to work with individual elements of iterable objects. As you continue in your work as an analyst, you are asked to iterate through your list of state/county pairs to identify only the counties in California.
+
+# As a refresher, here is the data you have been working with:
+
+# state_name	county_name
+# Arizona	Maricopa
+# California	Alameda
+# California	Sacramento
+# Kentucky	Jefferson
+# Louisiana	East Baton Rouge
+
+# 3a: Unpacking in a loop
+# Write a loop that unpacks each tuple in state_county_tuples and, if the state in the tuple is California, add the corresponding county to a list called ca_counties.
+# Expected output:
+
+# [OUT] ['Alameda', 'Sacramento']
+
+ca_counties = []
+for states, counties in state_county_tuples:
+    if states == "California":
+        ca_counties.append(counties)
+ca_counties
+
+# 3b: Unpacking in a list comprehension
+# Now, use a list comprehension to accomplish the same thing as what you did in Task 3a.
+
+# In a list comprehension, unpack each tuple in state_county_tuples and, if the state in the tuple is California, add the corresponding county to the list comprehension.
+
+# Assign the result to a variable called ca_counties.
+
+# Print ca_counties.
+
+# Expected output:
+
+# [OUT] ['Alameda', 'Sacramento']
+
+
+ca_counties = [county for (state, county) in state_county_tuples if state == "California"]
+ca_counties
