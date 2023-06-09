@@ -49,3 +49,21 @@ print(state_county_tuples)
 state_county_zipped = list(zip(state_names, county_names))
 
 state_county_zipped == state_county_tuples
+
+# Task 2: Use list comprehension to convert to list of lists
+# Since tuples are immutable and can't be changed, converting tuples to lists is a practice data professionals use so they can make adjustments to the data, if necessary.
+
+# Use a list comprehension to convert state_county_tuples from a list of tuples to a list of lists. Assign the result to a variable called state_county_lists.
+
+# Print the result.
+
+# Expected result:
+
+# [OUT] [['Arizona', 'Maricopa'],
+#        ['California', 'Alameda'],
+#        ['California', 'Sacramento'],
+#        ['Kentucky', 'Jefferson'],
+#        ['Louisiana', 'East Baton Rouge']]
+
+state_county_lists = [list(i) for i in state_county_tuples]
+print(state_county_lists)
