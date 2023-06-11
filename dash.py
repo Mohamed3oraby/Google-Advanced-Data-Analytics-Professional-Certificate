@@ -17,11 +17,17 @@ team = [
 
 # User Dictionary instead of lists
 
+# Instantiate an empty dictionary
 new_team = {}
-for name, age, position in team:
-    if position in new_team:
-        new_team[position].append((name, age))
-    else:
-        new_team[position] = [(name, age)]
 
-new_team = ['center']
+# Loop over the tuples in the list of players and unpack their values
+for name, age, position in team:
+    if position in new_team:                    # If position already a key in new_team,
+        new_team[position].append((name, age))  # append (name, age) tup to list at that value
+    else:
+        new_team[position] = [(name, age)]      # If position not a key in new_team,
+                                                # create a new key whose value is a list
+                                                # containing (name, age) tup
+new_team
+
+print(new_team['center'])
