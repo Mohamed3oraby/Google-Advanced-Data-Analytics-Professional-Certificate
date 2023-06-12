@@ -31,3 +31,12 @@ for name, age, position in team:
 new_team
 
 print(new_team['center'])
+
+for x in new_team:
+    print(x)
+
+print(new_team.keys())
+print(new_team.values())
+
+for a, b in new_team.items():
+    print(a, b)
